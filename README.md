@@ -5,8 +5,6 @@ Aplicación móvil Android desarrollada en Kotlin que apoya el trabajo pedagógi
 
 Reemplaza las guías impresas por un recorrido digital: el docente asigna objetivos y define cuántos intentos tiene la prueba, el estudiante estudia y rinde, y la aplicación genera un informe por objetivo que el docente debe **validar**. La jefatura de UTP revisa y autoriza el contenido antes de que pueda usarse.
 
-Proyecto desarrollado como MVP académico del curso **Desarrollo de Aplicaciones Móviles (DSY1105)** – Duoc UC – `<completar: periodo académico>`.
-
 > **Alcance:** es un Producto Mínimo Viable. Usa únicamente datos ficticios y no corresponde a una plataforma productiva.
 
 ## Estudiantes
@@ -22,18 +20,18 @@ Proyecto desarrollado como MVP académico del curso **Desarrollo de Aplicaciones
 
 ## Funcionalidades implementadas
 - [x] Inicio de sesión con perfiles (UTP, Docente, Estudiante) y navegación según el rol
+- [x] Registro de sesión para perfiles (Docente y Estudiante)
 - [x] Persistencia local de usuarios, objetivos, contenidos, preguntas, respuestas e informes
 - [x] **Estudiante:** lista de asignaturas asignadas, contenidos explicativos por objetivo y prueba final con una pregunta por pantalla
 - [x] Límite de intentos de la prueba configurable por el docente, con mensaje cuando se agotan
 - [x] Resultado de la prueba con respuestas correctas e incorrectas
 - [x] **Docente:** asignación de objetivos autorizados a su curso, configuración de intentos y consulta de informes por estudiante
-- [x] Informe pedagógico generado por reglas (sin IA ni servicios externos) y **validación manual obligatoria** del docente
+- [x] Informe pedagógico y **validación manual obligatoria** del docente
 - [x] **UTP:** revisión del detalle de cada objetivo y autorización de contenidos
-- [x] Interfaz con tema azul (claro y oscuro), `Scaffold`, barra de navegación inferior para el docente y animaciones de transición
-- [ ] Descarga del informe en PDF
-- [ ] Actividades y desafíos previos a la prueba final
-- [ ] Contenido de las cuatro asignaturas (actualmente hay contenido de ejemplo)
-- [ ] APK firmado en modo *release*
+- [x] Interfaz con tema azul, `Scaffold`, barra de navegación inferior para el docente y animaciones de transición
+- [x] Descarga del informe 
+- [x] Actividades y desafíos previos a la prueba final
+- [x] Contenido de las cuatro asignaturas 
 
 ## Tecnologías utilizadas
 - Android Studio / Kotlin
@@ -44,15 +42,15 @@ Proyecto desarrollado como MVP académico del curso **Desarrollo de Aplicaciones
 - KSP (procesador de anotaciones para Room)
 
 ## Requisitos previos
-- Android Studio `<completar: versión, en Help → About Android Studio>`
-- JDK `<completar: versión; suele ser la que incluye Android Studio>`
-- SDK de Android `<completar: API mínima (minSdk) y compileSdk, en app/build.gradle.kts>`
+- Android Studio: Android Studio Rabbit 1 | 2026.2.1 (o superior)
+- JDK: Java Development Kit (JDK) 64-bit 
+- SDK de Android : 24
 - Un emulador o un teléfono Android con depuración USB activada
 
 ## Pasos para ejecutar
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/<usuario>/<repositorio>.git
+   git clone https://github.com/PierVillacorta/proyectoMpazpro.git
    ```
 2. Abrir la carpeta del proyecto con Android Studio (**File → Open**).
 3. Esperar a que termine la sincronización de Gradle (**Sync Now** si aparece el aviso).
@@ -114,7 +112,3 @@ app/src/main/java/cl/duoc/mpazpro/
 ## Notas para desarrollo
 - Cada vez que se modifica una entidad de Room hay que **subir el número de `version`** en `AppDatabase`. La base usa migración destructiva: al subir la versión se recrea y se vuelven a cargar los datos de prueba.
 
-## Generar el APK
-`<completar cuando esté listo: Build → Generate Signed App Bundle / APK → APK → variante release>`
-
-> El archivo de claves (*keystore*) **no debe subirse al repositorio**.
